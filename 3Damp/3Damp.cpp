@@ -5,17 +5,17 @@ int main(int argc, char** argv)
 {
     std::cout << "Hello World!\n";
 
-    Core::Objects::vertexes[0] = -0.5f;
-    Core::Objects::vertexes[1] = 0;
-    Core::Objects::vertexes[2] = 0.1f;
+    Core::Objects::vertexes[0] = 0;
+    Core::Objects::vertexes[1] = 1;
+    Core::Objects::vertexes[2] = 0;
 
-    Core::Objects::vertexes[3] = 0;
-    Core::Objects::vertexes[4] = 0.5f;
-    Core::Objects::vertexes[5] = 0.1f;
+    Core::Objects::vertexes[3] = -1;
+    Core::Objects::vertexes[4] = -1;
+    Core::Objects::vertexes[5] = 1;
 
-    Core::Objects::vertexes[6] = 0.5f;
-    Core::Objects::vertexes[7] = 0.5f;
-    Core::Objects::vertexes[8] = 0.5;
+    Core::Objects::vertexes[6] = 1;
+    Core::Objects::vertexes[7] = -1;
+    Core::Objects::vertexes[8] = 1;
 
     Core::Objects::colors[0] = 255;
     Core::Objects::colors[1] = 0;

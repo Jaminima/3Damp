@@ -148,6 +148,7 @@
     <ClInclude Include="GL\freeglut_ext.h" />
     <ClInclude Include="GL\freeglut_std.h" />
     <ClInclude Include="GL\glut.h" />
+    <ClInclude Include="Graphics.h" />
   </ItemGroup>
   <ItemGroup>
     <Library Include="GL\freeglut.lib" />
