@@ -6,7 +6,7 @@ void Core::Draw() {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glMatrixMode(GL_MODELVIEW);
 
-    glLoadIdentity();
+    //glLoadIdentity();
 
     glEnableClientState(GL_VERTEX_ARRAY);
     glEnableClientState(GL_COLOR_ARRAY);
@@ -16,7 +16,11 @@ void Core::Draw() {
 
     while (I != 0x0) {
         P = (GmeObject*)I->Obj;
+        glLoadIdentity();
         P->Draw();
+        P->rZ += 10;
+        P->rY += 10;
+        P->rX += 10;
         I = I->Next;
     }
     
