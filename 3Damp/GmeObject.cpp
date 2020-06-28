@@ -2,6 +2,11 @@
 
 void GmeObject::Draw() {
 	glTranslatef(X, Y, Z);
+
+	glRotatef(rX, 1, 0, 0);
+	glRotatef(rY, 0, 1, 0);
+	glRotatef(rZ, 0, 0, 1);
+
 	glVertexPointer(3, GL_FLOAT, sizeof(float) * 3, Vertexes);
 	glColorPointer(4, GL_UNSIGNED_BYTE, sizeof(char) * 4, Colors);
 	glDrawArrays(GL_TRIANGLES, 0, Triangles*3);

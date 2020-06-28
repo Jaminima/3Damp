@@ -9,6 +9,7 @@ int main(int argc, char** argv)
 
     O->X = -1.5f;
     O->Z = -6.0f;
+    O->rZ = 45;
 
     O->Vertexes[0] = 0;
     O->Vertexes[1] = 1;

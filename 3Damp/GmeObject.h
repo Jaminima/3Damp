@@ -7,6 +7,11 @@ public:
 
 	unsigned int Triangles = 0;
 
+	float rX = 0;
+	float rY = 0;
+	float rZ = 0;
+
+
 	float X = 0;
 	float Y = 0;
 	float Z = 0;

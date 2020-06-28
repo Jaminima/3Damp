@@ -56,7 +56,7 @@ void Core::Start(int argc, char** argv) {
     glClearDepth(1.0f);
     glDepthFunc(GL_LEQUAL);
     glShadeModel(GL_SMOOTH);
-    glClearColor(0.0f, 0.0f, 0.0f, 1.0f); // Set background color to black and opaque
+    glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
     glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);
 
     glutMainLoop();
