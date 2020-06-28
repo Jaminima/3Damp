@@ -21,8 +21,8 @@ void Core::Draw() {
         glLoadIdentity();
         P->Draw();
         P->rZ += 1;
-        P->rY += 1;
-        P->rX += 1;
+        P->rY += 2;
+        P->rX += 3;
         I = I->Next;
     }
     
@@ -49,10 +49,6 @@ void Core::Reshape(GLsizei width, GLsizei height) {
     gluPerspective(45.0f, aspect, 0.1f, 100.0f);
 }
 
-void Core::Idle() {
-
-}
-
 void Core::Start(int argc, char** argv) {
     glutInit(&argc, argv);
 
@@ -62,7 +58,6 @@ void Core::Start(int argc, char** argv) {
 
     glutDisplayFunc(&Draw);
     glutReshapeFunc(&Reshape);
-    glutIdleFunc(&Idle);
 
     glEnable(GL_DEPTH_TEST);
     glClearDepth(1.0f);
