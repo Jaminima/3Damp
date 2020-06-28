@@ -7,6 +7,8 @@
 const unsigned int WIDTH = 640;
 const unsigned int HEIGHT = 480;
 
+const float dTime = 0.016f;
+
 const unsigned int MaxTrig = 10;
 
 namespace Core {
@@ -18,5 +20,7 @@ namespace Core {
 	void Draw();
 
 	void Reshape(GLsizei width, GLsizei height);
+
+	void Idle();
 
 }

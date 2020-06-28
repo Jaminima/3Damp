@@ -2,11 +2,13 @@
 
 extern List* Core::Objects = new List();
 
+void TriggerRedraw(int i) {
+    glutPostRedisplay();
+}
+
 void Core::Draw() {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glMatrixMode(GL_MODELVIEW);
-
-    //glLoadIdentity();
 
     glEnableClientState(GL_VERTEX_ARRAY);
     glEnableClientState(GL_COLOR_ARRAY);
@@ -18,9 +20,9 @@ void Core::Draw() {
         P = (GmeObject*)I->Obj;
         glLoadIdentity();
         P->Draw();
-        P->rZ += 10;
-        P->rY += 10;
-        P->rX += 10;
+        P->rZ += 1;
+        P->rY += 1;
+        P->rX += 1;
         I = I->Next;
     }
     
@@ -29,6 +31,8 @@ void Core::Draw() {
 
     glFlush();
     glutSwapBuffers();
+
+    glutTimerFunc(dTime * 1000, TriggerRedraw, 0);
 }
 
 void Core::Reshape(GLsizei width, GLsizei height) {
@@ -45,6 +49,10 @@ void Core::Reshape(GLsizei width, GLsizei height) {
     gluPerspective(45.0f, aspect, 0.1f, 100.0f);
 }
 
+void Core::Idle() {
+
+}
+
 void Core::Start(int argc, char** argv) {
     glutInit(&argc, argv);
 
@@ -54,7 +62,7 @@ void Core::Start(int argc, char** argv) {
 
     glutDisplayFunc(&Draw);
     glutReshapeFunc(&Reshape);
-    //glutIdleFunc(&Idle);
+    glutIdleFunc(&Idle);
 
     glEnable(GL_DEPTH_TEST);
     glClearDepth(1.0f);
