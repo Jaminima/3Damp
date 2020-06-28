@@ -1,20 +1,25 @@
 #include "Core.h"
 
-float Core::Objects::vertexes[MaxObj*3];
-char Core::Objects::colors[MaxObj*4];
+extern List* Core::Objects = new List();
 
 void Core::Draw() {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glMatrixMode(GL_MODELVIEW);
 
     glLoadIdentity();
-    glTranslatef(-1.5f, 0.0f, -6.0f); 
 
     glEnableClientState(GL_VERTEX_ARRAY);
     glEnableClientState(GL_COLOR_ARRAY);
-    glVertexPointer(3, GL_FLOAT, sizeof(float)*3, &Core::Objects::vertexes[0]);
-    glColorPointer(4, GL_UNSIGNED_BYTE, sizeof(char)*4, &Core::Objects::colors[0]);
-    glDrawArrays(GL_TRIANGLES, 0, MaxObj);
+
+    Item* I = Objects->Head;
+    GmeObject* P;
+
+    while (I != 0x0) {
+        P = (GmeObject*)I->Obj;
+        P->Draw();
+        I = I->Next;
+    }
+    
     glDisableClientState(GL_VERTEX_ARRAY);
     glDisableClientState(GL_COLOR_ARRAY);
 
