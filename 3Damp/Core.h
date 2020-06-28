@@ -21,6 +21,4 @@ namespace Core {
 
 	void Reshape(GLsizei width, GLsizei height);
 
-	void Idle();
-
 }

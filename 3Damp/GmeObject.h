@@ -1,4 +1,5 @@
 #pragma once
+#include "Camera.h"
 #include "GL/glut.h"
 #include "GL/freeglut.h"
 

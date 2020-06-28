@@ -16,19 +16,34 @@
     <Filter Include="Header Files\GL">
       <UniqueIdentifier>{5e531e82-6c01-4f83-b611-acf74e345259}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Engine">
+      <UniqueIdentifier>{fc6eb6b2-e56c-45d3-aae0-90439c68950d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Engine">
+      <UniqueIdentifier>{b481e817-b732-43aa-9dc9-7df0cccbd3f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Engine\Objects">
+      <UniqueIdentifier>{63c4f995-9945-4f6b-b6fb-50b13b04f587}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Engine\Objects">
+      <UniqueIdentifier>{3ae3a4cf-4136-4a03-9d9a-5b0bc36e6d23}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="3Damp.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Core.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="GmeObject.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Engine\Objects</Filter>
     </ClCompile>
     <ClCompile Include="List.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Engine\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Core.cpp">
+      <Filter>Source Files\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>Source Files\Engine\Objects</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -44,14 +59,17 @@
     <ClInclude Include="GL\glut.h">
       <Filter>Header Files\GL</Filter>
     </ClInclude>
-    <ClInclude Include="Core.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="GmeObject.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Engine\Objects</Filter>
     </ClInclude>
     <ClInclude Include="List.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Engine\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Core.h">
+      <Filter>Header Files\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>Header Files\Engine\Objects</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

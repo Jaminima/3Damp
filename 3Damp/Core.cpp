@@ -20,11 +20,14 @@ void Core::Draw() {
         P = (GmeObject*)I->Obj;
         glLoadIdentity();
         P->Draw();
-        P->rZ += 1;
+        /*P->rZ += 1;
         P->rY += 2;
-        P->rX += 3;
+        P->rX += 3;*/
         I = I->Next;
     }
+
+    Camera::Z += 0.1f;
+    Camera::rY += 0.1f;
     
     glDisableClientState(GL_VERTEX_ARRAY);
     glDisableClientState(GL_COLOR_ARRAY);
@@ -46,7 +49,7 @@ void Core::Reshape(GLsizei width, GLsizei height) {
     glMatrixMode(GL_PROJECTION);  // To operate on the Projection matrix
     glLoadIdentity();             // Reset
     // Enable perspective projection with fovy, aspect, zNear and zFar
-    gluPerspective(45.0f, aspect, 0.1f, 100.0f);
+    gluPerspective(45.0f, aspect, 0.1f, 1000.0f);
 }
 
 void Core::Start(int argc, char** argv) {

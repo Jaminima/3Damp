@@ -1,7 +1,11 @@
 #include "GmeObject.h"
 
 void GmeObject::Draw() {
-	glTranslatef(X, Y, Z);
+	glRotatef(Camera::rX, 1, 0, 0);
+	glRotatef(Camera::rY, 0, 1, 0);
+	glRotatef(Camera::rZ, 0, 0, 1);
+
+	glTranslatef(X + Camera::X, Y + Camera::Y, Z + Camera::Z);
 
 	glRotatef(rX, 1, 0, 0);
 	glRotatef(rY, 0, 1, 0);
