@@ -22,6 +22,7 @@ void Core::Draw() {
         P = (GmeObject*)I->Obj;
         glLoadIdentity();
         P->Draw();
+        Events::OnObjectUpdate(P);
         I = I->Next;
     }
     

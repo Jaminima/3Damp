@@ -1,11 +1,17 @@
 #include <iostream>
 #include "Core.h"
 
+void ObjUpdate(GmeObject* obj) {
+    obj->rX += 2;
+    obj->rY += 3;
+    obj->rZ += 1;
+}
+
 void Frame() {
     Camera::Z += 0.2f;
-    Camera::rX += 2;
-    Camera::rY += 3;
-    Camera::rZ += 1;
+    //Camera::rX += 2;
+    Camera::rY += 1;
+    //Camera::rZ += 1;
 }
 
 int main(int argc, char** argv)
@@ -155,5 +161,6 @@ int main(int argc, char** argv)
     }
 
     Events::OnFrame = &Frame;
+    Events::OnObjectUpdate = &ObjUpdate;
     Core::Start(argc, argv);
 }
