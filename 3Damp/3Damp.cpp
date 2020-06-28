@@ -1,6 +1,13 @@
 #include <iostream>
 #include "Core.h"
 
+void Frame() {
+    Camera::Z += 0.2f;
+    Camera::rX += 2;
+    Camera::rY += 3;
+    Camera::rZ += 1;
+}
+
 int main(int argc, char** argv)
 {
     std::cout << "Hello World!\n";
@@ -147,5 +154,6 @@ int main(int argc, char** argv)
         if (x == 200) { x = 0; z+=2; }
     }
 
+    Events::OnFrame = &Frame;
     Core::Start(argc, argv);
 }

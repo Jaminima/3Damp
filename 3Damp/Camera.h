@@ -5,7 +5,6 @@ namespace Camera {
 	extern float Y;
 	extern float Z;
 
-
 	extern float rX;
 	extern float rY;
 	extern float rZ;

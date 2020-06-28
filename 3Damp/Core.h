@@ -1,5 +1,6 @@
 #pragma once
 #include "GmeObject.h"
+#include "Events.h"
 #include "List.h"
 #include "GL/glut.h"
 #include "GL/freeglut.h"

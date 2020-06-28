@@ -7,6 +7,8 @@ void TriggerRedraw(int i) {
 }
 
 void Core::Draw() {
+    if (Events::OnFrame) Events::OnFrame();
+
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glMatrixMode(GL_MODELVIEW);
 
@@ -20,14 +22,8 @@ void Core::Draw() {
         P = (GmeObject*)I->Obj;
         glLoadIdentity();
         P->Draw();
-        /*P->rZ += 1;
-        P->rY += 2;
-        P->rX += 3;*/
         I = I->Next;
     }
-
-    Camera::Z += 0.1f;
-    Camera::rY += 0.1f;
     
     glDisableClientState(GL_VERTEX_ARRAY);
     glDisableClientState(GL_COLOR_ARRAY);
@@ -39,17 +35,15 @@ void Core::Draw() {
 }
 
 void Core::Reshape(GLsizei width, GLsizei height) {
-    if (height == 0) height = 1;                // To prevent divide by 0
+    if (height == 0) height = 1;
     GLfloat aspect = (GLfloat)width / (GLfloat)height;
 
-    // Set the viewport to cover the new window
     glViewport(0, 0, width, height);
 
-    // Set the aspect ratio of the clipping volume to match the viewport
-    glMatrixMode(GL_PROJECTION);  // To operate on the Projection matrix
-    glLoadIdentity();             // Reset
-    // Enable perspective projection with fovy, aspect, zNear and zFar
-    gluPerspective(45.0f, aspect, 0.1f, 1000.0f);
+    glMatrixMode(GL_PROJECTION); 
+    glLoadIdentity();
+    
+    gluPerspective(45.0f, aspect, 0.1f, 100.0f);
 }
 
 void Core::Start(int argc, char** argv) {
@@ -61,7 +55,6 @@ void Core::Start(int argc, char** argv) {
         glEnable(GLUT_MULTISAMPLE);
         glutSetOption(GLUT_MULTISAMPLE, MSAA);
     }
-
     else glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA);
 
     glutInitWindowSize(WIDTH, HEIGHT);
@@ -76,7 +69,6 @@ void Core::Start(int argc, char** argv) {
     glShadeModel(GL_SMOOTH);
     glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
     glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST); 
-
 
     glutMainLoop();
 }

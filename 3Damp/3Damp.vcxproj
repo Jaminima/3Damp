@@ -142,12 +142,14 @@
     <ClCompile Include="3Damp.cpp" />
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="Core.cpp" />
+    <ClCompile Include="Events.cpp" />
     <ClCompile Include="GmeObject.cpp" />
     <ClCompile Include="List.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Camera.h" />
     <ClInclude Include="Core.h" />
+    <ClInclude Include="Events.h" />
     <ClInclude Include="GL\freeglut.h" />
     <ClInclude Include="GL\freeglut_ext.h" />
     <ClInclude Include="GL\freeglut_std.h" />
