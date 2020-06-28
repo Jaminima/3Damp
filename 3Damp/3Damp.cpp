@@ -43,12 +43,12 @@ int main(int argc, char** argv)
 
     Core::Objects->Add(O);*/
 
-    for (int x = 0, z = 0; z < 30;) {
+    for (int x = 0, z = 0; z < 200;) {
 
         O = new GmeObject(12);
 
         O->Z = -(10 + z);
-        O->X = (-10 + x);
+        O->X = (-100 + x);
 
         O->Y = -5;
         O->rX = 90;
@@ -144,7 +144,7 @@ int main(int argc, char** argv)
         Core::Objects->Add(O);
 
         x+=2;
-        if (x == 20) { x = 0; z+=2; }
+        if (x == 200) { x = 0; z+=2; }
     }
 
     Core::Start(argc, argv);

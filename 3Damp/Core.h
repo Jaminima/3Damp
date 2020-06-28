@@ -9,6 +9,8 @@ const unsigned int HEIGHT = 480;
 
 const float dTime = 0.016f;
 
+const unsigned char MSAA = 8;
+
 const unsigned int MaxTrig = 10;
 
 namespace Core {

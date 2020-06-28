@@ -55,7 +55,15 @@ void Core::Reshape(GLsizei width, GLsizei height) {
 void Core::Start(int argc, char** argv) {
     glutInit(&argc, argv);
 
-    glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA);
+    if (MSAA != 0) {
+        glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA | GLUT_MULTISAMPLE);
+
+        glEnable(GLUT_MULTISAMPLE);
+        glutSetOption(GLUT_MULTISAMPLE, MSAA);
+    }
+
+    else glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA);
+
     glutInitWindowSize(WIDTH, HEIGHT);
     glutCreateWindow("GLUT Test");
 
@@ -67,7 +75,8 @@ void Core::Start(int argc, char** argv) {
     glDepthFunc(GL_LEQUAL);
     glShadeModel(GL_SMOOTH);
     glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
-    glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);
+    glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST); 
+
 
     glutMainLoop();
 }
