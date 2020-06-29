@@ -7,6 +7,7 @@ void TriggerRedraw(int i) {
 }
 
 void Core::Draw() {
+    if (Events::OnKeyDepressed) Events::DoKeys();
     if (Events::OnFrame) Events::OnFrame();
 
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -50,6 +51,7 @@ void Core::Reshape(GLsizei width, GLsizei height) {
 void Core::Start(int argc, char** argv) {
     glutInit(&argc, argv);
 
+    //Configure MSAA
     if (MSAA != 0) {
         glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA | GLUT_MULTISAMPLE);
 
@@ -58,12 +60,17 @@ void Core::Start(int argc, char** argv) {
     }
     else glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA);
 
+    //Configure Window
     glutInitWindowSize(WIDTH, HEIGHT);
-    glutCreateWindow("GLUT Test");
+    glutCreateWindow("3Damp");
 
+    //Set Events
     glutDisplayFunc(&Draw);
     glutReshapeFunc(&Reshape);
+    glutKeyboardFunc(Events::KeyPressedDown);
+    glutKeyboardUpFunc(Events::KeyReleased);
 
+    //Set OpenGL Config
     glEnable(GL_DEPTH_TEST);
     glClearDepth(1.0f);
     glDepthFunc(GL_LEQUAL);

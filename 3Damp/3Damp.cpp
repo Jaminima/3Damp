@@ -1,16 +1,34 @@
 #include <iostream>
 #include "Core.h"
 
+void OnKeyDepressed(unsigned char C) {
+    switch (C)
+    {
+    case 'w':
+        Camera::Z+=0.1f;
+        break;
+    case 'a':
+        Camera::X += 0.1f;
+        break;
+    case 's':
+        Camera::Z -= 0.1f;
+        break;
+    case 'd':
+        Camera::X -= 0.1f;
+        break;
+    }
+}
+
 void ObjUpdate(GmeObject* obj) {
-    obj->rX += 2;
+    /*obj->rX += 2;
     obj->rY += 3;
-    obj->rZ += 1;
+    obj->rZ += 1;*/
 }
 
 void Frame() {
-    Camera::Z += 0.2f;
+    //Camera::Z += 0.2f;
     //Camera::rX += 2;
-    Camera::rY += 1;
+    //Camera::rY += 1;
     //Camera::rZ += 1;
 }
 
@@ -162,5 +180,6 @@ int main(int argc, char** argv)
 
     Events::OnFrame = &Frame;
     Events::OnObjectUpdate = &ObjUpdate;
+    Events::OnKeyDepressed = &OnKeyDepressed;
     Core::Start(argc, argv);
 }
