@@ -5,17 +5,18 @@
 #include "GL/glut.h"
 #include "GL/freeglut.h"
 
-const unsigned int WIDTH = 640;
-const unsigned int HEIGHT = 480;
+extern unsigned int WIDTH;
+extern unsigned int HEIGHT;
 
-const float dTime = 0.016f;
+extern float dTime;
 
-const unsigned char MSAA = 8;
+extern float mSensX;
+extern float mSensY;
 
-const unsigned int MaxTrig = 10;
+extern unsigned char MSAA;
 
-const bool LockMouse = true;
-const bool HideMouse = true;
+extern bool LockMouse;
+extern bool HideMouse;
 
 namespace Core {
 

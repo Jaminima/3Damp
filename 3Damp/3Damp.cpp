@@ -20,8 +20,8 @@ void OnKeyDepressed(unsigned char C) {
 }
 
 void OnMMove(int x, int y) {
-    Camera::rY += x * 0.1f;
-    Camera::rX += y * 0.1f;
+    Camera::rY += x * mSensX;
+    Camera::rX += y * mSensY;
 }
 
 void ObjUpdate(GmeObject* obj) {

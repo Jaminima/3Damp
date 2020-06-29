@@ -146,6 +146,7 @@
     <ClCompile Include="GmeObject.cpp" />
     <ClCompile Include="Inputs.cpp" />
     <ClCompile Include="List.cpp" />
+    <ClCompile Include="Rendering.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Camera.h" />
