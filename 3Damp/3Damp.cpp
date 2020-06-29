@@ -19,6 +19,11 @@ void OnKeyDepressed(unsigned char C) {
     }
 }
 
+void OnMMove(int x, int y) {
+    Camera::rY += x * 0.1f;
+    Camera::rX += y * 0.1f;
+}
+
 void ObjUpdate(GmeObject* obj) {
     /*obj->rX += 2;
     obj->rY += 3;
@@ -181,5 +186,6 @@ int main(int argc, char** argv)
     Events::OnFrame = &Frame;
     Events::OnObjectUpdate = &ObjUpdate;
     Events::OnKeyDepressed = &OnKeyDepressed;
+    Events::OnMouseMove = &OnMMove;
     Core::Start(argc, argv);
 }

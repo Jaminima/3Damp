@@ -1,6 +1,19 @@
 #include "Events.h"
 
+int mX = WIDTH/2;
+int mY = HEIGHT/2;
+
 List ActiveKeys;
+
+void Events::MouseMovedInWindow(int x, int y) {
+	if (Events::OnMouseMove) Events::OnMouseMove(x - mX, y - mY);
+
+	if (LockMouse) glutWarpPointer(WIDTH / 2, HEIGHT / 2);
+	else {
+		mX = x;
+		mY = y;
+	}
+}
 
 void Events::DoKeys() {
 	Item* I = ActiveKeys.Head;

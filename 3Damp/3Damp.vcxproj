@@ -144,6 +144,7 @@
     <ClCompile Include="Core.cpp" />
     <ClCompile Include="Events.cpp" />
     <ClCompile Include="GmeObject.cpp" />
+    <ClCompile Include="Inputs.cpp" />
     <ClCompile Include="List.cpp" />
   </ItemGroup>
   <ItemGroup>

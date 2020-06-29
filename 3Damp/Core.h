@@ -14,6 +14,9 @@ const unsigned char MSAA = 8;
 
 const unsigned int MaxTrig = 10;
 
+const bool LockMouse = true;
+const bool HideMouse = true;
+
 namespace Core {
 
 	extern List* Objects;

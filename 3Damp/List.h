@@ -1,7 +1,7 @@
 #pragma once
 class Item {
 public:
-	void* Obj;
+	void* Obj = 0x0;
 	Item* Prev = 0x0;
 	Item* Next = 0x0;
 

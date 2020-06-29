@@ -1,4 +1,5 @@
 #include "Core.h"
+#include <iostream>
 
 extern List* Core::Objects = new List();
 
@@ -23,7 +24,7 @@ void Core::Draw() {
         P = (GmeObject*)I->Obj;
         glLoadIdentity();
         P->Draw();
-        Events::OnObjectUpdate(P);
+        if (Events::OnObjectUpdate) Events::OnObjectUpdate(P);
         I = I->Next;
     }
     
@@ -33,7 +34,7 @@ void Core::Draw() {
     glFlush();
     glutSwapBuffers();
 
-    glutTimerFunc(dTime * 1000, TriggerRedraw, 0);
+    glutTimerFunc((unsigned int)ceil(dTime * 1000), TriggerRedraw, 0);
 }
 
 void Core::Reshape(GLsizei width, GLsizei height) {
@@ -69,6 +70,7 @@ void Core::Start(int argc, char** argv) {
     glutReshapeFunc(&Reshape);
     glutKeyboardFunc(Events::KeyPressedDown);
     glutKeyboardUpFunc(Events::KeyReleased);
+    glutPassiveMotionFunc(Events::MouseMovedInWindow);
 
     //Set OpenGL Config
     glEnable(GL_DEPTH_TEST);
@@ -77,6 +79,8 @@ void Core::Start(int argc, char** argv) {
     glShadeModel(GL_SMOOTH);
     glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
     glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST); 
+
+    if (HideMouse) glutSetCursor(GLUT_CURSOR_NONE);
 
     glutMainLoop();
 }
