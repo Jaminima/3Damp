@@ -17,7 +17,7 @@ public:
 	float Z = 0;
 
 	float* Vertexes;
-	char* Colors;
+	BYTE* Colors;
 
 	GmeObject(unsigned int Triangles);
 
