@@ -4,14 +4,20 @@
 void OnKeyDepressed(unsigned char C) {
     switch (C)
     {
+    case 'q':
+        Camera::MoveRelativeAdv(0, 0, 0.1f);
+        break;
+    case 'e':
+        Camera::MoveRelativeAdv(0, 0, -0.1f);
+        break;
     case 'w':
-        Camera::MoveRelative(0.1f, 0);
+        Camera::MoveRelativeAdv(0.1f, 0, 0);
         break;
     case 'a':
         Camera::MoveRelative(0, -0.1f);
         break;
     case 's':
-        Camera::MoveRelative(-0.1f, 0);
+        Camera::MoveRelativeAdv(-0.1f, 0,0);
         break;
     case 'd':
         Camera::MoveRelative(0, 0.1f);
@@ -39,8 +45,6 @@ void Frame() {
 
 int main(int argc, char** argv)
 {
-    std::cout << "Hello World!\n";
-
     GmeObject* O;
 
     /*O = new GmeObject(4);
