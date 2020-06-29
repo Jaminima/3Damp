@@ -5,16 +5,16 @@ void OnKeyDepressed(unsigned char C) {
     switch (C)
     {
     case 'w':
-        Camera::Z+=0.1f;
+        Camera::MoveRelative(0.1f, 0);
         break;
     case 'a':
-        Camera::X += 0.1f;
+        Camera::MoveRelative(0, -0.1f);
         break;
     case 's':
-        Camera::Z -= 0.1f;
+        Camera::MoveRelative(-0.1f, 0);
         break;
     case 'd':
-        Camera::X -= 0.1f;
+        Camera::MoveRelative(0, 0.1f);
         break;
     }
 }

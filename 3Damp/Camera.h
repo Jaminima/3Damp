@@ -8,4 +8,6 @@ namespace Camera {
 	extern float rX;
 	extern float rY;
 	extern float rZ;
+
+	void MoveRelative(float fwd, float sde);
 }
