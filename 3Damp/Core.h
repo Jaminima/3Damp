@@ -15,6 +15,8 @@ extern float mSensY;
 
 extern unsigned char MSAA;
 
+extern bool AllowAlpha;
+
 extern bool LockMouse;
 extern bool HideMouse;
 

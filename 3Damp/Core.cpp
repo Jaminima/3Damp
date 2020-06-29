@@ -10,6 +10,8 @@ extern float mSensY = 0.1f;
 
 extern unsigned char MSAA = 8;
 
+extern bool AllowAlpha = false;
+
 extern bool LockMouse = true;
 extern bool HideMouse = true;
 
@@ -39,14 +41,17 @@ void Core::Start(int argc, char** argv) {
     glutPassiveMotionFunc(Events::MouseMovedInWindow);
 
     //Set OpenGL Config
-    glEnable(GL_BLEND);
-    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     glEnable(GL_DEPTH_TEST);
     glClearDepth(1.0f);
     glDepthFunc(GL_LEQUAL);
     glShadeModel(GL_SMOOTH);
     glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
     glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST); 
+
+    if (AllowAlpha) {
+        glEnable(GL_BLEND);
+        glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+    }
 
     if (HideMouse) glutSetCursor(GLUT_CURSOR_NONE);
 
