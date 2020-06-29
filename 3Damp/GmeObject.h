@@ -21,5 +21,7 @@ public:
 
 	GmeObject(unsigned int Triangles);
 
+	static GmeObject* FromObjFile(const char* File);
+
 	void Draw();
 };

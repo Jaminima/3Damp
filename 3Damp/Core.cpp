@@ -10,7 +10,7 @@ extern float mSensY = 0.1f;
 
 extern unsigned char MSAA = 8;
 
-extern bool AllowAlpha = false;
+extern bool AllowAlpha = true;
 
 extern bool LockMouse = true;
 extern bool HideMouse = true;

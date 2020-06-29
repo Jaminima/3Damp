@@ -45,6 +45,12 @@ void Frame() {
 
 int main(int argc, char** argv)
 {
+    GmeObject* T = GmeObject::FromObjFile("G:/OneDrive - University of Plymouth/Programming/C++/3Damp/Debug/human.obj");
+    
+    T->Z = -200;
+
+    Core::Objects->Add(T);
+
     GmeObject* O;
     
     /*O->Vertexes = new float[36]{
@@ -76,7 +82,7 @@ int main(int argc, char** argv)
                 0, 0, 255, 255
         };*/
 
-    for (int x = 0, z = 0; z < 20;) {
+        /*for (int x = 0, z = 0; z < 20;) {
 
         O = new GmeObject(12);
 
@@ -178,7 +184,7 @@ int main(int argc, char** argv)
 
         x+=2;
         if (x == 20) { x = 0; z+=2; }
-    }
+    }*/
 
     Events::OnFrame = &Frame;
     Events::OnObjectUpdate = &ObjUpdate;

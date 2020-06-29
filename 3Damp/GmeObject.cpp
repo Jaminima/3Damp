@@ -5,6 +5,7 @@ void GmeObject::Draw() {
 	glRotatef(Camera::rY, 0, 1, 0);
 	glRotatef(Camera::rZ, 0, 0, 1);
 
+	glScalef(0.1f, 0.1f, 0.1f);
 	glTranslatef(X + Camera::X, Y + Camera::Y, Z + Camera::Z);
 
 	glRotatef(rX, 1, 0, 0);
@@ -13,7 +14,7 @@ void GmeObject::Draw() {
 
 	glVertexPointer(3, GL_FLOAT, sizeof(float) * 3, Vertexes);
 	glColorPointer(4, GL_UNSIGNED_BYTE, sizeof(BYTE) * 4, Colors);
-	glDrawArrays(GL_TRIANGLES, 0, Triangles*3);
+	glDrawArrays(GL_TRIANGLES, 0, Triangles);
 }
 
 GmeObject::GmeObject(unsigned int Triangles) {
