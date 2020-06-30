@@ -1,4 +1,10 @@
 #include "GmeObject.h"
+#include <iostream>
+#include <fstream>
+#include <string>
+#include "List.h"
+
+using namespace std;
 
 void GmeObject::Draw() {
 	glRotatef(Camera::rX, 1, 0, 0);
@@ -14,7 +20,7 @@ void GmeObject::Draw() {
 
 	glVertexPointer(3, GL_FLOAT, sizeof(float) * 3, Vertexes);
 	glColorPointer(4, GL_UNSIGNED_BYTE, sizeof(BYTE) * 4, Colors);
-	glDrawArrays(GL_TRIANGLES, 0, Triangles);
+	glDrawArrays(GL_TRIANGLES, 0, Triangles*3);
 }
 
 GmeObject::GmeObject(unsigned int Triangles) {

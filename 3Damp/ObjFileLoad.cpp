@@ -125,7 +125,7 @@ GmeObject* GmeObject::FromObjFile(const char* File) {
         }
         data.close();
 
-        gme = new GmeObject(Trig.Len);
+        gme = new GmeObject(Trig.Len/9);
         gme->Vertexes = FPPtoFP((float**)Trig.ToArray(), Trig.Len);
         gme->Colors = BPPtoBP((BYTE**)Col.ToArray(), Col.Len);
     }

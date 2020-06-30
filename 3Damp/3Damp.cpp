@@ -1,4 +1,5 @@
 #include <iostream>
+# include <windows.h>
 #include "Core.h"
 
 void OnKeyDepressed(unsigned char C) {
@@ -31,9 +32,14 @@ void OnMMove(int x, int y) {
 }
 
 void ObjUpdate(GmeObject* obj) {
-    //obj->rX += rand() / 10000;
-    //obj->rY += rand() / 10000;
-    //obj->rZ += rand() / 10000;
+    /*obj->rX += rand() / 10000;
+    obj->rY += rand() / 10000;
+    obj->rZ += rand() / 10000;*/
+
+    obj->rX += 1;
+    obj->rY += 2;
+    obj->rZ += 3;
+    
 }
 
 void Frame() {
@@ -45,8 +51,9 @@ void Frame() {
 
 int main(int argc, char** argv)
 {
-    GmeObject* T = GmeObject::FromObjFile("G:/OneDrive - University of Plymouth/Programming/C++/3Damp/Debug/human.obj");
-    
+    GmeObject* T;
+    T = GmeObject::FromObjFile("G:/OneDrive - University of Plymouth/Programming/C++/3Damp/Debug/teapot.obj");
+
     T->Z = -200;
 
     Core::Objects->Add(T);
