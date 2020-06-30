@@ -9,11 +9,8 @@
 
 using namespace std;
 
-
-//Stolen http://www.martinbroadhurst.com/how-to-split-a-string-in-c.html
 template <class Container>
-void StringSplit(const std::string& str, Container& cont,
-    char delim = ' ')
+void StringSplit(const std::string& str, Container& cont, char delim)
 {
     std::size_t current, previous = 0;
     current = str.find(delim);

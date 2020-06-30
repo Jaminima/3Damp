@@ -51,8 +51,14 @@ void Frame() {
 
 int main(int argc, char** argv)
 {
+    PrefabObject* P = new PrefabObject();
+
+    P->ObjFile = (char *)"G:/OneDrive - University of Plymouth/Programming/C++/3Damp/Debug/teapot.obj";
+    P->Save("G:/OneDrive - University of Plymouth/Programming/C++/3Damp/Debug/teapot.prf");
+
     GmeObject* T;
-    T = GmeObject::FromObjFile("G:/OneDrive - University of Plymouth/Programming/C++/3Damp/Debug/teapot.obj");
+    //T = GmeObject::FromObjFile("G:/OneDrive - University of Plymouth/Programming/C++/3Damp/Debug/teapot.obj");
+    T = P->CreateGameObj();
 
     T->Z = -200;
 

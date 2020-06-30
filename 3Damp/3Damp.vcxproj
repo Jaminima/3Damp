@@ -147,6 +147,7 @@
     <ClCompile Include="Inputs.cpp" />
     <ClCompile Include="List.cpp" />
     <ClCompile Include="ObjFileLoad.cpp" />
+    <ClCompile Include="PrefabObj.cpp" />
     <ClCompile Include="Rendering.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -159,6 +160,7 @@
     <ClInclude Include="GL\glut.h" />
     <ClInclude Include="GmeObject.h" />
     <ClInclude Include="List.h" />
+    <ClInclude Include="PrefabObj.h" />
   </ItemGroup>
   <ItemGroup>
     <Library Include="GL\freeglut.lib" />

@@ -1,4 +1,5 @@
 #pragma once
+#include "PrefabObj.h"
 #include "GmeObject.h"
 #include "Events.h"
 #include "List.h"
