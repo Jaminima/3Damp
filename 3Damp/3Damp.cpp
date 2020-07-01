@@ -53,8 +53,14 @@ int main(int argc, char** argv)
 {
     PrefabObject* P = new PrefabObject();
 
+    P = PrefabObject::FromPrefFile("G:/OneDrive - University of Plymouth/Programming/C++/3Damp/Debug/teapot.prf");
+
+    /*P->sX = 0.1f;
+    P->sY = 0.02f;
+    P->sZ = 0.1f;
+
     P->ObjFile = (char *)"G:/OneDrive - University of Plymouth/Programming/C++/3Damp/Debug/teapot.obj";
-    P->Save("G:/OneDrive - University of Plymouth/Programming/C++/3Damp/Debug/teapot.prf");
+    P->Save("G:/OneDrive - University of Plymouth/Programming/C++/3Damp/Debug/teapot.prf");*/
 
     GmeObject* T;
     //T = GmeObject::FromObjFile("G:/OneDrive - University of Plymouth/Programming/C++/3Damp/Debug/teapot.obj");

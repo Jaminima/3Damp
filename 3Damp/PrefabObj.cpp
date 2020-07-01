@@ -20,6 +20,10 @@ void PrefabObject::Save(const char* File) {
     data << Y << '\n';
     data << Z << '\n';
 
+    data << sX << '\n';
+    data << sY << '\n';
+    data << sZ << '\n';
+
     data.close();
 }
 
@@ -41,15 +45,22 @@ PrefabObject* PrefabObject::FromPrefFile(const char* File) {
 
                 switch (i)
                 {
-                case 0: gme->ObjFile;
+                case 0:
+                    gme->ObjFile = new char[line.size()];
+                    std::strcpy(gme->ObjFile, line.c_str());
+                    break;
 
-                case 1: gme->rX;
-                case 2: gme->rY;
-                case 3: gme->rZ;
+                case 1: gme->rX = stof(line); break;
+                case 2: gme->rY = stof(line); break;
+                case 3: gme->rZ = stof(line); break;
 
-                case 4: gme->X;
-                case 5: gme->Y;
-                case 6: gme->Z;
+                case 4: gme->X = stof(line); break;
+                case 5: gme->Y = stof(line); break;
+                case 6: gme->Z = stof(line); break;
+
+                case 7: gme->sX = stof(line); break;
+                case 8: gme->sY = stof(line); break;
+                case 9: gme->sZ = stof(line); break;
                 }
 
                 i++;

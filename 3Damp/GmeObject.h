@@ -16,6 +16,10 @@ public:
 	float Y = 0;
 	float Z = 0;
 
+	float sX = 1;
+	float sY = 1;
+	float sZ = 1;
+
 	float* Vertexes;
 	BYTE* Colors;
 

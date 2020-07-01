@@ -11,7 +11,7 @@ void GmeObject::Draw() {
 	glRotatef(Camera::rY, 0, 1, 0);
 	glRotatef(Camera::rZ, 0, 0, 1);
 
-	glScalef(0.1f, 0.1f, 0.1f);
+	glScalef(sX, sY, sZ);
 	glTranslatef(X + Camera::X, Y + Camera::Y, Z + Camera::Z);
 
 	glRotatef(rX, 1, 0, 0);
