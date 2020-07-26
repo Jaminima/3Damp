@@ -1,5 +1,5 @@
 #include <iostream>
-# include <windows.h>
+#include <windows.h>
 #include "Core.h"
 
 void OnKeyDepressed(unsigned char C) {
